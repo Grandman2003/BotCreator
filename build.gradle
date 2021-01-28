@@ -1,0 +1,45 @@
+plugins {
+    id 'org.springframework.boot' version '2.3.4.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+    id 'java'
+}
+
+group = 'com.example'
+artifacts {"BotCreator"}
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    all {
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+        exclude group: 'ch.qos.logback', module: 'logback-classic'
+        exclude group: 'org.apache.logging.log4j', module: 'log4j-to-slf4j'
+    }
+}
+
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    implementation('org.postgresql:postgresql')
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+        implementation "org.telegram:telegrambots:4.9.1"
+        implementation "org.apache.cassandra:cassandra-all:0.8.1"
+        implementation "com.google.guava:guava:29.0-jre"
+        implementation "com.vdurmont:emoji-java:3.1.3"
+        implementation "org.slf4j:slf4j-nop:1.7.13"
+        implementation "org.slf4j:slf4j-jdk14:[1.5.6,)"
+
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
