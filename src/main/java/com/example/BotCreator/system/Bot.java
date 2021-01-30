@@ -2,18 +2,18 @@ package com.example.BotCreator.system;
 
 
 public class Bot {
-     final String USERTOKEN;
+     String BOT_TOKEN;
      String script;
      String BOT_NAME;
 
-    public Bot(String USERTOKEN,String BOT_NAME,String script) {
-        this.USERTOKEN =USERTOKEN;
+    public Bot(String BOT_TOKEN,String BOT_NAME,String script) {
+        this.BOT_TOKEN =BOT_TOKEN;
         this.script=script;
         this.BOT_NAME=BOT_NAME;
     }
 
-    public String getUSERTOKEN() {
-        return USERTOKEN;
+    public String getBOT_TOKEN() {
+        return BOT_TOKEN;
     }
 
     public String getScript() {

@@ -1,16 +1,13 @@
 package com.example.BotCreator.controllers;
 
-import com.example.BotCreator.domain.BotInfo;
 import com.example.BotCreator.domain.User;
 import com.example.BotCreator.domain.UserInfo;
-import com.example.BotCreator.repositories.BotInfoRepo;
 import com.example.BotCreator.repositories.UserRepo;
 import com.example.BotCreator.system.Bot;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.*;
-import java.util.concurrent.TimeUnit;
 
 @RestController
 @RequestMapping("/user")
@@ -72,8 +69,8 @@ public class UserController {
 
                         "   try {\n" +
                         "       Botapi.registerBot(new TelegramLongPollingBot() { \n" +
-                        "           public static final String TOKEN = \"1490083571:AAFl435QRXdmFrn1wfKb0IYmrDad2-EqTQ4\";\n" +
-                        "           public static final String USERNAME = \"first_bot_of_creator_bot\";\n" +
+                        "           public static final String TOKEN = \""+bot.getBOT_TOKEN()+"\";\n" +
+                        "           public static final String USERNAME = \""+bot.getBOT_NAME()+"\";\n" +
 
                         "           @Override\n" +
                         "           public String getBotToken() {\n" +
