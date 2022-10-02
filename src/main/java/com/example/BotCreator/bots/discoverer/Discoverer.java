@@ -14,7 +14,7 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException;
        TelegramBotsApi Botapi=new TelegramBotsApi();
    try {
        Botapi.registerBot(new TelegramLongPollingBot() { 
-           public static final String TOKEN = "1490083571:AAFl435QRXdmFrn1wfKb0IYmrDad2-EqTQ4";
+           public static final String TOKEN = "YOUR TOKEN";
            public static final String USERNAME = "first_bot_of_creator_bot";
            @Override
            public String getBotToken() {
